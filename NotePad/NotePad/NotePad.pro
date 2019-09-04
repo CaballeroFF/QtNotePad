@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        finddialog.cpp \
         main.cpp \
         notepad.cpp
 
 HEADERS += \
+        finddialog.h \
         notepad.h
 
 FORMS += \
+        finddialog.ui \
         notepad.ui
 
 # Default rules for deployment.

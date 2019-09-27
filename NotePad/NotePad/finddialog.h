@@ -19,6 +19,7 @@ public:
 signals:
     void sendFindValue(QString& s);
     void sendDirectionValue(bool& direction);
+    void sendMatchCaseState(bool matchCase);
 
 private slots:
     void on_lineEdit_textEdited(const QString &arg1);
@@ -26,6 +27,8 @@ private slots:
     void on_findNextButton_clicked();
 
     void on_downRadioButton_toggled(bool checked);
+
+    void on_matchCase_stateChanged(int arg1);
 
 private:
     Ui::FindDialog *ui;

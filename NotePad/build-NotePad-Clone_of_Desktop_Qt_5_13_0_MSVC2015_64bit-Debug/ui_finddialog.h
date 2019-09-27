@@ -28,7 +28,7 @@ public:
     QLineEdit *lineEdit;
     QPushButton *findNextButton;
     QPushButton *pushButton_2;
-    QCheckBox *checkBox;
+    QCheckBox *matchCase;
     QGroupBox *groupBox;
     QRadioButton *upRadioButton;
     QRadioButton *downRadioButton;
@@ -52,9 +52,9 @@ public:
         pushButton_2 = new QPushButton(FindDialog);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(270, 40, 71, 23));
-        checkBox = new QCheckBox(FindDialog);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(10, 70, 81, 17));
+        matchCase = new QCheckBox(FindDialog);
+        matchCase->setObjectName(QString::fromUtf8("matchCase"));
+        matchCase->setGeometry(QRect(10, 70, 81, 17));
         groupBox = new QGroupBox(FindDialog);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(160, 40, 101, 51));
@@ -76,7 +76,7 @@ public:
         label->setText(QCoreApplication::translate("FindDialog", "Find what:", nullptr));
         findNextButton->setText(QCoreApplication::translate("FindDialog", "Find Next", nullptr));
         pushButton_2->setText(QCoreApplication::translate("FindDialog", "Cancel", nullptr));
-        checkBox->setText(QCoreApplication::translate("FindDialog", "Match Case", nullptr));
+        matchCase->setText(QCoreApplication::translate("FindDialog", "Match Case", nullptr));
         groupBox->setTitle(QCoreApplication::translate("FindDialog", "Direction", nullptr));
         upRadioButton->setText(QCoreApplication::translate("FindDialog", "&Up", nullptr));
         downRadioButton->setText(QCoreApplication::translate("FindDialog", "Down", nullptr));

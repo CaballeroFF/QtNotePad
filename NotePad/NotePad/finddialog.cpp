@@ -39,3 +39,12 @@ void FindDialog::on_downRadioButton_toggled(bool checked)
 {
     emit sendDirectionValue(checked);
 }
+
+void FindDialog::on_matchCase_stateChanged(int arg1)
+{
+    if (arg1 == Qt::Checked) {
+        emit sendMatchCaseState(true);
+    } else {
+        emit sendMatchCaseState(false);
+    }
+}

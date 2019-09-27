@@ -2,11 +2,13 @@
 #define NOTEPAD_H
 
 #include <QCloseEvent>
+#include <QColor>
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QPalette>
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QTextStream>
@@ -16,7 +18,6 @@
 /*
  * fix direction up
  * functionality of match case
- * make selection blue when focused on find dialog
  */
 
 namespace Ui {
@@ -34,6 +35,7 @@ public:
 private slots:
     void receiveFindValue(QString& s);
     void receiveDirectionValue(bool& directionDown);
+    void receiveMatchCase(bool matchCase);
 
     void on_actionNew_triggered();
     void on_actionOpen_triggered();

@@ -13,6 +13,11 @@ NotePad::NotePad(QWidget *parent) :
     ui->actionCopy->setEnabled(false);
     ui->actionCut->setEnabled(false);
     ui->actionDelete->setEnabled(false);
+
+    QPalette palette = ui->textEdit->palette();
+    palette.setColor(QPalette::Highlight, QColor(0, 100, 255, 255));
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+    ui->textEdit->setPalette(palette);
 }
 
 NotePad::~NotePad()
@@ -92,6 +97,10 @@ void NotePad::receiveFindValue(QString& s){
 
 void NotePad::receiveDirectionValue(bool& directionDown) {
     this->directionDown = directionDown;
+}
+
+void NotePad::receiveMatchCase(bool matchCase) {
+    qDebug() << matchCase;
 }
 
 void NotePad::on_actionNew_triggered()
@@ -186,6 +195,7 @@ void NotePad::on_actionFind_triggered()
     findDialog->show();
     connect(findDialog, SIGNAL(sendFindValue(QString&)), this, SLOT(receiveFindValue(QString&)));
     connect(findDialog, SIGNAL(sendDirectionValue(bool&)), this, SLOT(receiveDirectionValue(bool&)));
+    connect(findDialog, SIGNAL(sendMatchCaseState(bool)), this, SLOT(receiveMatchCase(bool)));
 }
 
 void NotePad::on_actionFind_Next_triggered()
